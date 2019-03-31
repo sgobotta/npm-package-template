@@ -1,0 +1,55 @@
+{
+  "name": "npm-package-template",
+  "version": "0.0.0",
+  "description": "Just an npm package template",
+  "author": "sgobotta <santiago@camba.coop>",
+  "license": "GPL-3.0",
+  "main": "dist/main.js",
+  "bin": "dist/cli.js",
+  "scripts": {
+    "start": "npm run build && node dist/cli.js",
+    "build": "node_modules/.bin/rimraf dist/ && node_modules/.bin/babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./npm-debug.log --copy-files",
+    "prepublish": "npm run build",
+    "publish": "git push origin --tags && git push origin",
+    "release:major": "npm version major && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:patch": "npm version patch && npm publish"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint",
+      "sourceType": "module"
+    }
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "rimraf": "^2.6.3"
+  },
+  "homepage": "https://github.com/sgobotta/npm-package-template#readme",
+  "keywords": [
+    "bin",
+    "node",
+    "npm",
+    "open source",
+    "package",
+    "script",
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgobotta/npm-package-template.git"
+  }
+}
