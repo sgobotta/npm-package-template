@@ -1,0 +1,17 @@
+# Ignore everything by default
+*
+
+# Keep
+
+!/constants/**/*
+!/dist/**/*
+!/lib/**/*
+!/public/**/*
+!/src/**/*
+
+!cli.js
+!main.js
+
+!README.md
+
+!package.json
